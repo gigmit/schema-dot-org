@@ -8,12 +8,14 @@ module SchemaDotOrg
     attr_accessor :name,
                   :image,
                   :same_as,
-                  :description
+                  :description,
+                  :url
 
     validates :name, type: String, presence: true
     validates :image, type: String, allow_nil: true
     validates :same_as, type: String, allow_nil: true
     validates :description, type: String, allow_nil: true
+    validates :url, type: String, allow_nil: true
 
     def _to_json_struct
       {
