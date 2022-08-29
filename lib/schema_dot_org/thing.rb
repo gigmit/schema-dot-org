@@ -11,9 +11,9 @@ module SchemaDotOrg
                   :description
 
     validates :name, type: String, presence: true
-    validates :image, type: String, presence: true
-    validates :same_as, type: String, presence: true
-    validates :description, type: String, presence: true
+    validates :image, type: String, allow_nil: true
+    validates :same_as, type: String, allow_nil: true
+    validates :description, type: String, allow_nil: true
 
     def _to_json_struct
       {
