@@ -17,10 +17,10 @@ module SchemaDotOrg
 
     def _to_json_struct
       {
-        'name' => self.name,
-        'image' => self.image,
-        'sameAs' => self.same_as,
-        'description' => self.description
+        'name' => name,
+        'image' => image,
+        'sameAs' => same_as,
+        'description' => description
       }
     end
   end

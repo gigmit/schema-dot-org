@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
 require 'schema_dot_org'
-
+require 'thing'
 
 module SchemaDotOrg
   # Model the Schema.org `Thing > Place`.  See http://schema.org/Place
-  class Place < SchemaType
+  class Place < Thing
     attr_accessor :address
-    validates :address, type: String, presence: true
+    validates :address, type: String
 
     def _to_json_struct
       {
-        'address' => self.address
+        'address' => address
       }
     end
   end
