@@ -8,7 +8,10 @@ require 'schema_dot_org/organization'
 module SchemaDotOrg
   # Model the Schema.org `MusicGroup`.  See http://schema.org/MusicGroup
   class MusicGroup < Organization
-    attr_accessor :start_date
+    attr_accessor :city,
+                  :country,
+                  :genre,
+                  :keywords
 
     validates :city, type: SchemaDotOrg::City, presence: true
     validates :country, type: SchemaDotOrg::Country, presence: true
