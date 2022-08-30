@@ -20,8 +20,8 @@ module SchemaDotOrg
 
     def _to_json_struct
       super.merge(
-        'city' => city.to_json_struct,
-        'country' => country.to_json_struct,
+        'city' => city&.to_json_struct,
+        'country' => country&.to_json_struct,
         'genre' => genre,
         'keywords' => keywords
       )
