@@ -11,7 +11,7 @@ module SchemaDotOrg
                   :description,
                   :url
 
-    validates :name, type: String, presence: true
+    validates :name, type: String, allow_nil: true
     validates :image, type: String, allow_nil: true
     validates :same_as, type: Array, allow_nil: true
     validates :description, type: String, allow_nil: true
