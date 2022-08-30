@@ -12,20 +12,26 @@ module SchemaDotOrg
                   :founder,
                   :founding_date,
                   :founding_location,
-                  :logo
+                  :logo,
+                  :address,
+                  :keywords
 
     validates :email, type: String, allow_nil: true
     validates :founder, type: SchemaDotOrg::Person, allow_nil: true
     validates :founding_date, type: Date, allow_nil: true
     validates :founding_location, type: SchemaDotOrg::Place, allow_nil: true
     validates :logo, type: String, allow_nil: true
+    validates :address, type: String, allow_nil: true
+    validates :keywords, type: String, allow_nil: true
 
     def _to_json_struct
       super.merge(
         'logo' => logo,
         'founder' => founder&.to_json_struct,
         'foundingDate' => founding_date&.to_s,
-        'foundingLocation' => founding_location&.to_json_struct
+        'foundingLocation' => founding_location&.to_json_struct,
+        'address' => address,
+        'keywords' => keywords
       )
     end
   end

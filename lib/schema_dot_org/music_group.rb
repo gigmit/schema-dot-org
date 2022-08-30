@@ -8,22 +8,13 @@ require 'schema_dot_org/organization'
 module SchemaDotOrg
   # Model the Schema.org `MusicGroup`.  See http://schema.org/MusicGroup
   class MusicGroup < Organization
-    attr_accessor :city,
-                  :country,
-                  :genre,
-                  :keywords
+    attr_accessor :genre
 
-    validates :city, type: SchemaDotOrg::City, presence: true
-    validates :country, type: SchemaDotOrg::Country, presence: true
     validates :genre, type: String, presence: true
-    validates :keywords, type: String, allow_nil: true
 
     def _to_json_struct
       super.merge(
-        'city' => city&.to_json_struct,
-        'country' => country&.to_json_struct,
-        'genre' => genre,
-        'keywords' => keywords
+        'genre' => genre
       )
     end
   end
