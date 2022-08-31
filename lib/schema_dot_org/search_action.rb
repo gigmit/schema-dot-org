@@ -1,8 +1,5 @@
 # frozen_string_literal: true
 
-require 'schema_dot_org'
-require 'schema_dot_org/thing'
-
 module SchemaDotOrg
   # Model the Schema.org `Thing > SearchAction`.  See http://schema.org/SearchAction
   class SearchAction < Thing

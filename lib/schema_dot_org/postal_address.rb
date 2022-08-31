@@ -1,8 +1,5 @@
 # frozen_string_literal: true
 
-require 'schema_dot_org'
-require 'schema_dot_org/thing'
-
 module SchemaDotOrg
   # Model the Schema.org `PostalAddress`.  See http://schema.org/PostalAddress
   class PostalAddress < Thing
@@ -11,8 +8,8 @@ module SchemaDotOrg
                   :street_address,
                   :postal_code
 
-    validates :address_country, type: SchemaDotOrg::Country, presence: true
-    validates :address_locality, type: String, presence: true
+    validates :address_country, type: SchemaDotOrg::Country, allow_nil: true
+    validates :address_locality, type: String, allow_nil: true
     validates :street_address, type: String, allow_nil: true
     validates :postal_code, type: String, allow_nil: true
 
@@ -21,7 +18,7 @@ module SchemaDotOrg
         'streetAddress' => street_address,
         'postalCode' => postal_code,
         'addressLocality' => address_locality,
-        'addressCountry' => address_country.to_json_struct
+        'addressCountry' => address_country&.to_json_struct
       )
     end
   end

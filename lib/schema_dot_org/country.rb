@@ -1,8 +1,5 @@
 # frozen_string_literal: true
 
-require 'schema_dot_org'
-require 'schema_dot_org/place'
-
 module SchemaDotOrg
   # Model the Schema.org `Country`.  See http://schema.org/Country
   class Country < Place

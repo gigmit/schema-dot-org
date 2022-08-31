@@ -65,4 +65,16 @@ module SchemaDotOrg
       defined?(Rails) && Rails.env.production?
     end
   end
+
+  require 'schema_dot_org/thing'
+  require 'schema_dot_org/place'
+  require 'schema_dot_org/city'
+  require 'schema_dot_org/country'
+  require 'schema_dot_org/postal_address'
+  require 'schema_dot_org/person'
+  require 'schema_dot_org/organization'
+  require 'schema_dot_org/music_event'
+  require 'schema_dot_org/music_group'
+  require 'schema_dot_org/search_action'
+  require 'schema_dot_org/web_site'
 end

@@ -1,9 +1,5 @@
 # frozen_string_literal: true
 
-require 'schema_dot_org'
-require 'schema_dot_org/thing'
-require 'schema_dot_org/postal_address'
-
 module SchemaDotOrg
   # Model the Schema.org `MusicEvent`.  See http://schema.org/MusicEvent
   class MusicEvent < Thing
