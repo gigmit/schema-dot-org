@@ -7,14 +7,14 @@ module SchemaDotOrg
                   :location,
                   :keywords
 
-    validates :start_date, type: Date, presence: true
-    validates :location, type: SchemaDotOrg::PostalAddress, presence: true
+    validates :start_date, type: Date, allow_nil: true
+    validates :location, type: SchemaDotOrg::PostalAddress, allow_nil: true
     validates :keywords, type: String, allow_nil: true
 
     def _to_json_struct
       super.merge(
-        'startDate' => start_date.to_s,
-        'location' => location.to_json_struct,
+        'startDate' => start_date&.to_s,
+        'location' => location&.to_json_struct,
         'keywords' => keywords
       )
     end
