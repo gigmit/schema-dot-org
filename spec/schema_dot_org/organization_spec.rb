@@ -63,10 +63,8 @@ RSpec.describe Organization do
           "@type" => "Place",
           'address' => "Portland, OR"
         },
-        'sameAs' => [
-          'https://twitter.com/law_is_code',
-          'https://www.facebook.com/PublicDotLaw'
-        ]
+        'sameAs' =>  'https://twitter.com/law_is_code',
+        'sameAs' => 'https://www.facebook.com/PublicDotLaw'
       )
     end
   end
