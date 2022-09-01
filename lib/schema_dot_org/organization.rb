@@ -23,6 +23,7 @@ module SchemaDotOrg
     def _to_json_struct
       super.merge(
         'logo' => logo,
+        'email' => email,
         'founder' => founder&.to_json_struct,
         'foundingDate' => founding_date&.to_s,
         'foundingLocation' => founding_location&.to_json_struct,

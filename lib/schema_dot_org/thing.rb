@@ -22,7 +22,8 @@ module SchemaDotOrg
         'name' => name,
         'image' => image,
         'sameAs' => same_as,
-        'description' => description
+        'description' => description,
+        'url' => url
       }
     end
   end
