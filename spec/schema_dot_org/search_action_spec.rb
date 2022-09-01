@@ -10,11 +10,11 @@ RSpec.describe SchemaDotOrg::SearchAction do # rubocop:disable Metrics/BlockLeng
       expect { SchemaDotOrg::SearchAction.new }.to raise_error(ArgumentError)
     end
 
-    it 'creates a SearchAction when given a target and query input' do
+    it 'creates a SearchAction when given a target and query' do
       expect do
         SchemaDotOrg::SearchAction.new(
           target:      'https://www.oregonlaws.org/?search={search_term_string}',
-          query_input: 'required name=search_term_string'
+          query: 'required name=search_term_string'
         )
       end.to_not raise_error
     end
@@ -25,12 +25,12 @@ RSpec.describe SchemaDotOrg::SearchAction do # rubocop:disable Metrics/BlockLeng
     it "has exactly the correct attributes and values" do
       action = SchemaDotOrg::SearchAction.new(
         target: 'https://www.oregonlaws.org/?search={search_term_string}',
-        query_input: 'required name=search_term_string'
+        query: 'required name=search_term_string'
       )
 
       expect(action.to_json_struct).to eq(
         'target' =>      'https://www.oregonlaws.org/?search={search_term_string}',
-        'query_input' => 'required name=search_term_string',
+        'query' => 'required name=search_term_string',
         '@type' =>   'SearchAction'
       )
     end
