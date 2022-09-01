@@ -3,12 +3,14 @@
 module SchemaDotOrg
   # Model the Schema.org `Thing`.  See http://schema.org/Thing
   class Thing < SchemaType
-    attr_accessor :name,
+    attr_accessor :id,
+                  :name,
                   :image,
                   :same_as,
                   :description,
                   :url
 
+    validates :id, type: String, allow_nil: true
     validates :name, type: String, allow_nil: true
     validates :image, type: String, allow_nil: true
     validates :same_as, type: Array, allow_nil: true
