@@ -42,8 +42,14 @@ module SchemaDotOrg
 
     # Use the class name to create the "@type" attribute.
     # @return a hash structure representing json.
+
     def to_json_struct
-      { '@type' => un_namespaced_classname, '@id' => id }.merge(_to_json_struct).reject { |_, v| v.blank? }
+      attributes = _to_json_struct.reject { |_, v| v.blank? }
+      return {} if attributes.empty?
+
+      struct = { '@type' => un_namespaced_classname }.merge(attributes)
+      struct['@id'] = id if id
+      struct
     end
 
 
