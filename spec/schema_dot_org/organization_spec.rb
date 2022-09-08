@@ -21,7 +21,7 @@ RSpec.describe Organization do
           name:             'Public.Law',
           founder:           Person.new(name: 'Robb Shecter'),
           founding_date:     Date.new(2009, 3, 6),
-          founding_location: Place.new(address: 'Portland, OR'),
+          founding_location: Place.new(address: SchemaDotOrg::PostalAddress.new(address_locality: 'Portland, OR')),
           email:            'say_hi@public.law',
           url:              'https://www.public.law',
           logo:             'https://www.public.law/favicon-196x196.png',
@@ -38,7 +38,7 @@ RSpec.describe Organization do
         name:             'Public.Law',
         founder:           Person.new(name: 'Robb Shecter'),
         founding_date:     Date.new(2009, 3, 6),
-        founding_location: Place.new(address: 'Portland, OR'),
+        founding_location: Place.new(address: SchemaDotOrg::PostalAddress.new(address_locality: 'Portland, OR')),
         email:            'say_hi@public.law',
         url:              'https://www.public.law',
         logo:             'https://www.public.law/favicon-196x196.png',
@@ -61,7 +61,10 @@ RSpec.describe Organization do
         },
         'foundingLocation' => {
           "@type" => "Place",
-          'address' => "Portland, OR"
+          'address' => {
+            "@type" => "PostalAddress",
+            "addressLocality" => "Portland, OR"
+      }
         },
         'sameAs' =>  'https://twitter.com/law_is_code',
         'sameAs' => 'https://www.facebook.com/PublicDotLaw'

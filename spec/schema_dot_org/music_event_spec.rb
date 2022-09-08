@@ -13,7 +13,7 @@ RSpec.describe SchemaDotOrg::MusicEvent do # rubocop:disable Metrics/BlockLength
         expect do
           SchemaDotOrg::MusicEvent.new(
             start_date: Date.today,
-            location: SchemaDotOrg::PostalAddress.new,
+            location: SchemaDotOrg::Place.new,
             keywords: 'concert'
           )
         end.not_to raise_error
@@ -37,14 +37,13 @@ RSpec.describe SchemaDotOrg::MusicEvent do # rubocop:disable Metrics/BlockLength
     it "has exactly the correct attributes and values" do
       action = SchemaDotOrg::MusicEvent.new(
         start_date: Date.today,
-        location: SchemaDotOrg::PostalAddress.new,
+        location: SchemaDotOrg::Place.new,
         keywords: 'concert'
       )
 
       expect(action.to_json_struct).to eq(
         '@type' => 'MusicEvent',
         'startDate' => Date.today.to_s,
-        'location' => { '@type' => 'PostalAddress' },
         'keywords' => 'concert'
       )
     end

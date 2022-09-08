@@ -73,10 +73,10 @@ module SchemaDotOrg
   end
 
   require 'schema_dot_org/thing'
-  require 'schema_dot_org/place'
-  require 'schema_dot_org/city'
   require 'schema_dot_org/country'
   require 'schema_dot_org/postal_address'
+  require 'schema_dot_org/place'
+  require 'schema_dot_org/city'
   require 'schema_dot_org/person'
   require 'schema_dot_org/organization'
   require 'schema_dot_org/music_event'

@@ -8,7 +8,7 @@ module SchemaDotOrg
                   :keywords
 
     validates :start_date, type: Date, allow_nil: true
-    validates :location, type: SchemaDotOrg::PostalAddress, allow_nil: true
+    validates :location, type: SchemaDotOrg::Place, allow_nil: true
     validates :keywords, type: String, allow_nil: true
 
     def _to_json_struct
